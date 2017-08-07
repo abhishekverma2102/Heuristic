@@ -18,8 +18,24 @@ public class StudentDao {
 			new Student(4, "Amar", "UP", "ROR", "Ruby")
 			));
 	
-	public List<Student> getAllStudents(){
+	public List<Student> getAllStudents() {
 		return list;
 	}
-
+	
+	public Student getStudent(String id) {
+		return list.get(Integer.parseInt(id)-1);
+	}
+	
+	public boolean addStudent(Student student) {
+		return list.add(student);
+	}
+	
+	public Student updateStudent(String id, Student student) {
+		int uid = Integer.parseInt(id)-1;
+		return list.set(uid, student);
+	}
+	
+	public Student deleteStudent(String id) {
+		return list.remove(Integer.parseInt(id)-1);
+	}
 }

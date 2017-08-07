@@ -2,35 +2,18 @@ package vky.spring.springbootexample.services;
 
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
-import vky.spring.springbootexample.Dao.StudentDao;
 import vky.spring.springbootexample.entities.Student;
 
-@Service
-public class StudentService {
+public interface StudentService {
 
-	@Autowired
-	private StudentDao studentDao;
-	
-	public List<Student> getAllStudents(){
-		return studentDao.getAllStudents();
-	}
+	List<Student> getAllStudents();
 
-	public Student getStudent(String id) {
-		return studentDao.getStudent(id);
-	}
+	Student getStudent(String id);
 
-	public boolean addStudent(Student student) {
-		return studentDao.addStudent(student);
-	}
+	boolean addStudent(Student student);
 
-	public Student updateStudent(String id, Student student) {
-		return studentDao.updateStudent(id, student);
-	}
+	Student updateStudent(String id, Student student);
 
-	public Student deleteStudent(String id) {
-		return studentDao.deleteStudent(id);
-	}
+	Student deleteStudent(String id);
+
 }
